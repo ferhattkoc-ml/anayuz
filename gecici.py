@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title=" Quantum Analiz — Yakında Buradayız",
+    page_title="Quantum Analiz — Yakında Buradayız",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -21,10 +21,19 @@ st.markdown("""
     font-family: 'Inter', sans-serif;
 }
 
-/* Gereksiz Streamlit arayüz elemanlarını gizleme */
+/* Gereksiz Streamlit arayüz elemanlarını ve Profil Rozetini Gizleme */
 section[data-testid="stSidebar"],
 button[data-testid="collapsedControl"],
-header[data-testid="stHeader"] { display: none !important; }
+header[data-testid="stHeader"],
+.viewerBadge_container,
+.viewerBadge_link,
+div[data-testid="stToolbar"] { 
+    display: none !important; 
+}
+
+#MainMenu, footer { 
+    visibility: hidden !important; 
+}
 
 .block-container {
     padding: 0 !important;
