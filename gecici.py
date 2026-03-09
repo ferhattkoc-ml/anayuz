@@ -21,23 +21,20 @@ st.markdown("""
     font-family: 'Inter', sans-serif;
 }
 
-/* Gereksiz Streamlit arayüz elemanlarını ve Profil Rozetini Gizleme */
-section[data-testid="stSidebar"],
-button[data-testid="collapsedControl"],
-header[data-testid="stHeader"],
-.viewerBadge_container,
-.viewerBadge_link,
-div[data-testid="stToolbar"] { 
-    display: none !important; 
-}
-
-#MainMenu, footer { 
-    visibility: hidden !important; 
-}
+/* DIŞARIDAN GELENLER İÇİN TÜM STREAMLIT İZLERİNİ GİZLEME */
+#MainMenu { visibility: hidden !important; } /* Sağ üst hamburger menü */
+footer { visibility: hidden !important; } /* En alttaki made with streamlit yazısı */
+header { visibility: hidden !important; } /* Üstteki boşluk ve header */
+.viewerBadge_container { display: none !important; } /* Sağ alttaki rozet */
+[data-testid="stToolbar"] { display: none !important; }
+[data-testid="stHeader"] { display: none !important; }
+section[data-testid="stSidebar"] { display: none !important; }
+button[data-testid="collapsedControl"] { display: none !important; }
 
 .block-container {
     padding: 0 !important;
     max-width: 100% !important;
+    margin-top: -60px; /* Header gizlenince kalan boşluğu kapatır */
 }
 
 /* Tek sayfa (tam ekran) tasarımı için Hero Wrapper */
@@ -99,7 +96,7 @@ div[data-testid="stToolbar"] {
 """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────────
-# HTML İÇERİK (Sıfır Girinti)
+# HTML İÇERİK
 # ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero-wrap">
