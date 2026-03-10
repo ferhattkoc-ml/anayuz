@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Quantum Analiz — Yakında Buradayız",
+    page_title=" Quantum Analiz — Yakında Buradayız",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -21,20 +21,18 @@ st.markdown("""
     font-family: 'Inter', sans-serif;
 }
 
-/* DIŞARIDAN GELENLER İÇİN TÜM STREAMLIT İZLERİNİ GİZLEME */
-#MainMenu { visibility: hidden !important; } /* Sağ üst hamburger menü */
-footer { visibility: hidden !important; } /* En alttaki made with streamlit yazısı */
-header { visibility: hidden !important; } /* Üstteki boşluk ve header */
-.viewerBadge_container { display: none !important; } /* Sağ alttaki rozet */
-[data-testid="stToolbar"] { display: none !important; }
-[data-testid="stHeader"] { display: none !important; }
-section[data-testid="stSidebar"] { display: none !important; }
-button[data-testid="collapsedControl"] { display: none !important; }
+/* Gereksiz Streamlit arayüz elemanlarını gizleme (Güncellenmiş Kısım) */
+section[data-testid="stSidebar"],
+button[data-testid="collapsedControl"],
+header[data-testid="stHeader"],
+footer, 
+#MainMenu { 
+    display: none !important; 
+}
 
 .block-container {
     padding: 0 !important;
     max-width: 100% !important;
-    margin-top: -60px; /* Header gizlenince kalan boşluğu kapatır */
 }
 
 /* Tek sayfa (tam ekran) tasarımı için Hero Wrapper */
@@ -96,7 +94,7 @@ button[data-testid="collapsedControl"] { display: none !important; }
 """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────────
-# HTML İÇERİK
+# HTML İÇERİK (Sıfır Girinti)
 # ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero-wrap">
